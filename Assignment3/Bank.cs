@@ -7,8 +7,8 @@ namespace Assignment3
     class Bank
     {
         //FIELDS
-        public static readonly List<ITransaction> ACCOUNTS;
-        public static readonly List<Person> USERS;
+        public static readonly List<ITransaction> ACCOUNTS = new List<ITransaction>();
+        public static readonly List<Person> USERS = new List<Person>();
 
         //CONSTRUCTOR
         static Bank()
@@ -77,7 +77,10 @@ namespace Assignment3
         }
         public static Person GetPerson(string name)
         {
-
+            foreach (Person per in USERS)
+            { 
+                
+            }
         }
         public static void PrintAccounts()
         {
@@ -88,9 +91,9 @@ namespace Assignment3
         }
         public static void PrintPersons()
         {
-            foreach (Person per in persons)
+            foreach (Person per in USERS)
             {
-
+                Console.WriteLine(per);
             }
         }
     }
