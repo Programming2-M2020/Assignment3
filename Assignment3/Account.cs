@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Assignment3
 {
@@ -48,8 +47,7 @@ namespace Assignment3
             string representation = "";
             foreach (Person user in users)
             {
-                representation += "Account number: " + Number + "\nName: " + user.Name
-                    + "\nBalance: " + Balance + "\nTransactions: \n";
+                representation += $"Account number: {Number} \nName: {user} \nBalance: {Balance} \nTransactions: \n";
                 foreach(Transaction transaction in transactions)
                 {
                     representation += transaction + "\n";
