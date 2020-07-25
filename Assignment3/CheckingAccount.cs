@@ -1,12 +1,12 @@
 ﻿
 namespace Assignment3
 {
-    class CheckingAccount: Account, ITransaction
+    class CheckingAccount : Account, ITransaction
     {
         static double COST_PER_TRANSACTION = 0.05;
         static double INTEREST_RATE = 0.005;
         bool hasOverDraft;
-        public CheckingAccount(double balance = 0, bool hasOverDraft = false): base("CK-", balance)
+        public CheckingAccount(double balance = 0, bool hasOverDraft = false) : base("CK-", balance)
         {
             this.hasOverDraft = hasOverDraft;
         }
@@ -18,7 +18,7 @@ namespace Assignment3
         {
             foreach (Person user in Bank.GetAccount(Number).users)
             {
-                if(user.SIN == person.SIN || user.Name == person.Name)
+                if (user.SIN == person.SIN || user.Name == person.Name)
                 {
                     throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT);
                 }
@@ -26,8 +26,8 @@ namespace Assignment3
             if (!(person.IsAuthenticated))
             {
                 throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN);
-            }           
-            if(amount > Balance && !hasOverDraft)
+            }
+            if (amount > Balance && !hasOverDraft)
             {
                 throw new AccountException(ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED + " & " + ExceptionEnum.NO_OVERDRAFT);
             }

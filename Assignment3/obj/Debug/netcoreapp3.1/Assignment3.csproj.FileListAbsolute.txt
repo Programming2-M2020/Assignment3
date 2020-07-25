@@ -11,3 +11,16 @@ C:\Users\aniru\source\repos\Assignment3\Assignment3\obj\Debug\netcoreapp3.1\Assi
 C:\Users\aniru\source\repos\Assignment3\Assignment3\obj\Debug\netcoreapp3.1\Assignment3.dll
 C:\Users\aniru\source\repos\Assignment3\Assignment3\obj\Debug\netcoreapp3.1\Assignment3.pdb
 C:\Users\aniru\source\repos\Assignment3\Assignment3\obj\Debug\netcoreapp3.1\Assignment3.genruntimeconfig.cache
+D:\source\repos\Assignment3\Assignment3\obj\Debug\netcoreapp3.1\Assignment3.csprojAssemblyReference.cache
+D:\source\repos\Assignment3\Assignment3\obj\Debug\netcoreapp3.1\Assignment3.AssemblyInfoInputs.cache
+D:\source\repos\Assignment3\Assignment3\obj\Debug\netcoreapp3.1\Assignment3.AssemblyInfo.cs
+D:\source\repos\Assignment3\Assignment3\obj\Debug\netcoreapp3.1\Assignment3.csproj.CoreCompileInputs.cache
+D:\source\repos\Assignment3\Assignment3\obj\Debug\netcoreapp3.1\Assignment3.dll
+D:\source\repos\Assignment3\Assignment3\obj\Debug\netcoreapp3.1\Assignment3.pdb
+D:\source\repos\Assignment3\Assignment3\bin\Debug\netcoreapp3.1\Assignment3.exe
+D:\source\repos\Assignment3\Assignment3\bin\Debug\netcoreapp3.1\Assignment3.deps.json
+D:\source\repos\Assignment3\Assignment3\bin\Debug\netcoreapp3.1\Assignment3.runtimeconfig.json
+D:\source\repos\Assignment3\Assignment3\bin\Debug\netcoreapp3.1\Assignment3.runtimeconfig.dev.json
+D:\source\repos\Assignment3\Assignment3\bin\Debug\netcoreapp3.1\Assignment3.dll
+D:\source\repos\Assignment3\Assignment3\bin\Debug\netcoreapp3.1\Assignment3.pdb
+D:\source\repos\Assignment3\Assignment3\obj\Debug\netcoreapp3.1\Assignment3.genruntimeconfig.cache
