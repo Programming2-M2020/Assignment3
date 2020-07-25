@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Assignment3
 {
-    class AccountException
+    class AccountException: Exception
     {
     }
 }
