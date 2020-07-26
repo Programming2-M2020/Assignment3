@@ -20,16 +20,16 @@ namespace Assignment3
             {
                 if (user.SIN != person.SIN || user.Name != person.Name)
                 {
-                    throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT.ToString());
+                    throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT.ToDescriptionString());
                 }
             }
             if (!(person.IsAuthenticated))
             {
-                throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN.ToString());
+                throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN.ToDescriptionString());
             }
             if (amount > Balance && !hasOverDraft)
             {
-                throw new AccountException(ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED + " & " + ExceptionEnum.NO_OVERDRAFT);
+                throw new AccountException(ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED.ToDescriptionString() + " & " + ExceptionEnum.NO_OVERDRAFT.ToDescriptionString());
             }
             base.Deposit(-amount, person);
         }

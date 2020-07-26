@@ -30,7 +30,7 @@ namespace Assignment3
     }
     public class AccountException : Exception
     {
-        public AccountException(string reason) : base(reason.ToString())
+        public AccountException(string reason) : base(reason)
         {
         }
     }
