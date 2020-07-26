@@ -18,7 +18,7 @@ namespace Assignment3
             if (this.password != password)
             {
                 IsAuthenticated = false;
-                throw new AccountException(AccountEnum.PASSWORD_INCORRECT);
+                //throw new AccountException(AccountEnum.PASSWORD_INCORRECT);
             }
             IsAuthenticated = true;
         }

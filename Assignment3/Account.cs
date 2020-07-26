@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Assignment3
 {
@@ -24,7 +23,7 @@ namespace Assignment3
             /*public Transaction( string accountNumber, double amount, Person person, DateTime time )*/
             Balance += amount;
             LowestBalance = LowestBalance <= Balance ? LowestBalance : Balance;
-            transactions.Add(new Transaction(Number, amount, person, DateTime.Now));
+            //transactions.Add(new Transaction(Number, amount, person, DateTime.Now));
         }
         public void AddUser(Person person)
         {
@@ -34,10 +33,10 @@ namespace Assignment3
         {
             foreach (Person user in users)
             {
-                if(user.Name == name)
+                if (user.Name == name)
                 {
                     return true;
-                } 
+                }
             }
             return false;
         }
@@ -48,7 +47,7 @@ namespace Assignment3
             foreach (Person user in users)
             {
                 representation += $"Account number: {Number} \nName: {user} \nBalance: {Balance} \nTransactions: \n";
-                foreach(Transaction transaction in transactions)
+                foreach (Transaction transaction in transactions)
                 {
                     representation += transaction + "\n";
                 }
