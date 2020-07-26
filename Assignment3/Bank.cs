@@ -112,19 +112,6 @@ namespace Assignment3
                 Console.WriteLine(per);
             }
         }
-        public static void PrintAccounts()
-        {
-            foreach (Account acco in ACCOUNTS)
-            {
-                Console.WriteLine(acco);
-            }
-        }
-        public static void PrintPersons()
-        {
-            foreach (Person per in USERS)
-            {
-                Console.WriteLine(per);
-            }
-        }
+       
     }
 }
