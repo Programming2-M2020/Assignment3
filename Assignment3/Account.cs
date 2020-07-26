@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Assignment3
 {
@@ -20,10 +21,9 @@ namespace Assignment3
         }
         public void Deposit(double amount, Person person)
         {
-            /*public Transaction( string accountNumber, double amount, Person person, DateTime time )*/
             Balance += amount;
             LowestBalance = LowestBalance <= Balance ? LowestBalance : Balance;
-            //transactions.Add(new Transaction(Number, amount, person, DateTime.Now));
+            transactions.Add(new Transaction(Number, amount, person, DateTime.Now));
         }
         public void AddUser(Person person)
         {
@@ -43,16 +43,7 @@ namespace Assignment3
         public abstract void PrepareMonthlyReport();
         public override string ToString()
         {
-            string representation = "";
-            foreach (Person user in users)
-            {
-                representation += $"Account number: {Number} \nName: {user} \nBalance: {Balance} \nTransactions: \n";
-                foreach (Transaction transaction in transactions)
-                {
-                    representation += transaction + "\n";
-                }
-            }
-            return representation;
+            return $"Account number: {Number} \nName: {string.Join("\n", users)} \nBalance: {Balance} \nTransactions: \n {string.Join("\n", transactions)}";
         }
     }
 }

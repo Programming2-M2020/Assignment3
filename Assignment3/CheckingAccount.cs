@@ -20,12 +20,12 @@ namespace Assignment3
             {
                 if (user.SIN != person.SIN || user.Name != person.Name)
                 {
-                    throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT);
+                    throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT.ToString());
                 }
             }
             if (!(person.IsAuthenticated))
             {
-                throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN);
+                throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN.ToString());
             }
             if (amount > Balance && !hasOverDraft)
             {

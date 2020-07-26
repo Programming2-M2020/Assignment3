@@ -64,7 +64,7 @@ namespace Assignment3
             Console.WriteLine(b);
 
             //a checking account
-            ITransaction c = Bank.GetAccount("CK-100004");
+            CheckingAccount c = (CheckingAccount)Bank.GetAccount("CK-100004");
             c.Deposit(33.33, p7);
             c.Deposit(40.44, p7);
             c.Withdraw(150, p2);
@@ -73,7 +73,7 @@ namespace Assignment3
             c.Withdraw(350, p6);
             Console.WriteLine(c);
 
-            c = Bank.GetAccount("CK-100005");
+            c =(CheckingAccount)Bank.GetAccount("CK-100005");
             c.Deposit(33.33, p8);
             c.Deposit(40.44, p7);
             c.Withdraw(450, p10);
