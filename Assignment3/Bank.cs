@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Assignment3
 {
@@ -70,6 +71,7 @@ namespace Assignment3
 
         }
         //METHODS
+        //METHODS
         public static Account GetAccount(string number)
         {
             Account toBeReturned = null;
@@ -79,22 +81,36 @@ namespace Assignment3
                 {
                     toBeReturned = a;
                     break;
-                }          
+                }
             }
             return toBeReturned == null ? throw new AccountException(ExceptionEnum.ACCOUNT_DOES_NOT_EXIST.ToString()) : toBeReturned;
         }
         public static Person GetPerson(string name)
         {
-            Person toBeReturned = null;   
+            Person toBeReturned = null;
             foreach (Person p in USERS)
             {
                 if (p.Name == name)
                 {
                     toBeReturned = p;
                     break;
-                }                               
+                }
             }
             return toBeReturned == null ? throw new AccountException(ExceptionEnum.USER_DOES_NOT_EXIST.ToString()) : toBeReturned;
+        }
+        public static void PrintAccounts()
+        {
+            foreach (Account acco in ACCOUNTS)
+            {
+                Console.WriteLine(acco);
+            }
+        }
+        public static void PrintPersons()
+        {
+            foreach (Person per in USERS)
+            {
+                Console.WriteLine(per);
+            }
         }
         public static void PrintAccounts()
         {
