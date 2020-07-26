@@ -91,6 +91,7 @@ namespace Assignment3
                 if (p.Name == name)
                 {
                     toBeReturned = p;
+                    break;
                 }                               
             }
             return toBeReturned == null ? throw new AccountException(ExceptionEnum.USER_DOES_NOT_EXIST.ToString()) : toBeReturned;
