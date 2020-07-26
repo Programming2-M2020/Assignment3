@@ -35,7 +35,7 @@ namespace Assignment3
             new SavingAccount(5000),        //SV-100002
             new SavingAccount(),            //SV-100003
             new CheckingAccount(2000),      //CK-100004
-            new CheckingAccount(1500, true) //CK-100005
+            new CheckingAccount(1500, true),//CK-100005
             new VisaAccount(50, -550),      //VS-100006
             new SavingAccount(1000),        //SV-100007
             };
@@ -69,8 +69,8 @@ namespace Assignment3
             ACCOUNTS[7].AddUser(USERS[7]);
 
         }
-        METHODS
-        public static ITransaction GetAccount(string number)
+        //METHODS
+        public static Account GetAccount(string number)
         {
 
         }

@@ -18,7 +18,7 @@ namespace Assignment3
         {
             foreach (Person user in Bank.GetAccount(Number).users)
             {
-                if (user.SIN == person.SIN || user.Name == person.Name)
+                if (user.SIN != person.SIN || user.Name != person.Name)
                 {
                     throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT);
                 }
