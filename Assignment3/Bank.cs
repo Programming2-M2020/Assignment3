@@ -71,15 +71,34 @@ namespace Assignment3
 
         }
         //METHODS
-        public static ITransaction GetAccount(string number)
+        public static Account GetAccount(string number)
         {
-
+            foreach (Account a in ACCOUNTS)
+            {
+                if (a.Number == number)
+                {
+                    return a;
+                }
+                else
+                {
+                    throw new AccountException(ExceptionEnum.ACCOUNT_DOES_NOT_EXIST);
+                }
+            }
         }
         public static Person GetPerson(string name)
         {
-            foreach (Person per in USERS)
-            { 
-                
+            
+            foreach (Person p in USERS)
+            {
+                if (p.Name == name)
+                {
+                    return p;
+                }
+                else 
+                {
+                    throw new AccountException(ExceptionEnum.USER_DOES_NOT_EXIST);
+                }
+               
             }
         }
         public static void PrintAccounts()

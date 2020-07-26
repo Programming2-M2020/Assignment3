@@ -16,7 +16,7 @@ namespace Assignment3
 
     }
     
-         [Serializable]
+       
         public class AccountException : Exception
         {
             public AccountException(string reason) : base(reason.ToString()) 
