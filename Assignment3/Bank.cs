@@ -7,8 +7,8 @@ namespace Assignment3
     class Bank
     {
         //FIELDS
-        public static readonly List<ITransaction> ACCOUNTS = new List<ITransaction>();
-        public static readonly List<Person> USERS = new List<Person>();
+        public static readonly List<Account> ACCOUNTS;
+        public static readonly List<Person> USERS;
 
         //CONSTRUCTOR
         static Bank()
