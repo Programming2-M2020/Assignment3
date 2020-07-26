@@ -1,56 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace Assignment3
 {
-    enum ExceptionEnum
+    public enum ExceptionEnum
     {
+        [Description("This Account number doesn't exist")]
         ACCOUNT_DOES_NOT_EXIST,
+
+        [Description("The credit limit has been exceeded")]
         CREDIT_LIMIT_HAS_BEEN_EXCEEDED,
+
+        [Description("Name given is not associated with the account")]
         NAME_NOT_ASSOCIATED_WITH_ACCOUNT,
+
+        [Description("No overdraft for this account")]
         NO_OVERDRAFT,
+
+        [Description("Incorrect password")]
         PASSWORD_INCORRECT,
+
+        [Description("This Account number doesn't exist")]
         USER_DOES_NOT_EXIST,
+
+        [Description("User not logged in")]
         USER_NOT_LOGGED_IN
-
     }
-    
-       
-        public class AccountException : Exception
+    public class AccountException : Exception
+    {
+        public AccountException(string reason) : base(reason.ToString())
         {
-            public AccountException(string reason) : base(reason.ToString()) 
-            {
-            //switch ()
-            //{
-            //    case ExceptionEnum.ACCOUNT_DOES_NOT_EXIST:
-            //        Console.WriteLine("Your Account number doesn't exist");
-            //        break;
-            //    case ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED:
-            //        Console.WriteLine("Your credit limit has been exceeded");
-            //        break;
-            //    case ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT:
-            //        Console.WriteLine("Name entered does not match with the account");
-            //        break;
-            //    case ExceptionEnum.NO_OVERDRAFT:
-            //        Console.WriteLine("No overdraft");
-            //        break;
-            //    case ExceptionEnum.PASSWORD_INCORRECT:
-            //        Console.WriteLine("The password entered is incorrect");                  
-            //        break;
-            //    case ExceptionEnum.USER_DOES_NOT_EXIST:
-            //        Console.WriteLine("The user entered doesn't exist");
-            //        break;
-            //    case ExceptionEnum.USER_NOT_LOGGED_IN:
-            //        Console.WriteLine("User not logged in");
-            //        break;
-            //    default:
-            //        break;
-            //}
         }
-
-          
+    }
+    //this non-nested static class has a method for obtaining the description values from the enum
+    public static class Extender
+    {
+        public static string ToDescriptionString(this ExceptionEnum errorEnum)
+        {
+            //this array gets the values of descriptions in the enum for the passed in errorEnum value
+            //only one for
+            DescriptionAttribute[] attributes = (DescriptionAttribute[])errorEnum
+              .GetType()
+              .GetField(errorEnum.ToString())
+              .GetCustomAttributes(typeof(DescriptionAttribute), false);
+            return attributes[0].Description;
         }
-        
-    
+    }
 }

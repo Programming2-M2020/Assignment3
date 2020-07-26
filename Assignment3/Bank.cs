@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Assignment3
 {
-    class Bank
+    static class Bank
     {
         //FIELDS
         public static readonly List<Account> ACCOUNTS;
