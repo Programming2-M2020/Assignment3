@@ -13,19 +13,22 @@ namespace Assignment3
         //CONSTRUCTOR
         public SavingAccount(double balance = 0) : base("SV-", balance){}
         //METHODS
-        public void Deposit(double amount, Person person)
+        public new void Deposit(double amount, Person person)
         {
             base.Deposit(amount, person);
         }
         public void Withdraw(double amount , Person person)
         {
+            bool toVerify = false;
             foreach (Person user in Bank.GetAccount(Number).users)
             {
-                if (user.SIN != person.SIN || user.Name != person.Name)
+                if (user.SIN == person.SIN || user.Name == person.Name)
                 {
-                    throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT.ToDescriptionString());
+                    toVerify = true;
+                    break;
                 }
             }
+            _ = toVerify ? toVerify : throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT.ToDescriptionString());
             if (!(person.IsAuthenticated))
             {
                 throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN.ToDescriptionString());

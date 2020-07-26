@@ -39,8 +39,13 @@ namespace Assignment3
     {
         public static string ToDescriptionString(this ExceptionEnum errorEnum)
         {
-            //this array gets the values of descriptions in the enum for the passed in errorEnum value
-            //only one for
+            /*This method is called an extension method that extends the functionality of
+             * the enum. Here, the GetType method gets the type which is ExceptionEnum.
+             * Nextly, the GetField method obtains the name of the enum field that called
+             * this method. Finally, the GetCustomAttributes obtains the value of the 
+             * description attribute for the field that called this method and returns
+             * an array containing the same. (in our case, only one element is present)
+             */
             DescriptionAttribute[] attributes = (DescriptionAttribute[])errorEnum
               .GetType()
               .GetField(errorEnum.ToString())
