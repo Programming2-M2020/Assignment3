@@ -111,7 +111,6 @@ namespace Assignment3
             {
                 Console.WriteLine(per);
             }
-        }
-       
+        }  
     }
 }
