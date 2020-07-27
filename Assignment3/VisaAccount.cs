@@ -48,5 +48,9 @@ namespace Assignment3
             Balance -= interest;
             transactions.Clear();
         }
+        public override string ToString()
+        {
+            return base.ToString() + $"Credit Limit: ${CreditLimit}\n";
+        }
     }
 }
