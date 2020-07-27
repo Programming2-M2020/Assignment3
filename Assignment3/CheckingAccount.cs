@@ -16,20 +16,18 @@ namespace Assignment3
         }
         public void Withdraw(double amount, Person person)
         {
-            foreach (Person user in Bank.GetAccount(Number).users)
+            if (!IsUser(person.Name))
             {
-                if (user.SIN != person.SIN || user.Name != person.Name)
-                {
-                    throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT.ToString());
-                }
+                throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT);
             }
             if (!(person.IsAuthenticated))
             {
-                throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN.ToString());
+                throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN);
             }
             if (amount > Balance && !hasOverDraft)
             {
-                throw new AccountException(ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED + " & " + ExceptionEnum.NO_OVERDRAFT);
+                throw new AccountException(ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED);
+                throw new AccountException(ExceptionEnum.NO_OVERDRAFT);
             }
             base.Deposit(-amount, person);
         }
@@ -39,6 +37,10 @@ namespace Assignment3
             double interest = (LowestBalance * INTEREST_RATE) / 12;
             Balance += interest - service_charge;
             transactions.Clear();
+        }
+        public override string ToString()
+        {
+            return base.ToString() + "Overdraft: " + (hasOverDraft ? "Allowed\n" : "Not allowed\n");
         }
     }
 }

@@ -2,7 +2,7 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\aniru\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\draak\\.nuget\\packages"
+      "C:\\Users\\aniru\\.nuget\\packages"
     ]
   }
 }

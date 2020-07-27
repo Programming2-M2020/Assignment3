@@ -13,26 +13,23 @@ namespace Assignment3
         //CONSTRUCTOR
         public SavingAccount(double balance = 0) : base("SV-", balance){}
         //METHODS
-        public void Deposit(double amount, Person person)
+        public new void Deposit(double amount, Person person)
         {
             base.Deposit(amount, person);
         }
         public void Withdraw(double amount , Person person)
         {
-            foreach (Person user in Bank.GetAccount(Number).users)
+            if (!IsUser(person.Name))
             {
-                if (user.SIN != person.SIN || user.Name != person.Name)
-                {
-                    throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT.ToString());
-                }
+                throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT);
             }
             if (!(person.IsAuthenticated))
             {
-                throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN.ToString());
+                throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN);
             }
             if (amount > Balance)
             {
-                throw new AccountException(ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED.ToString());
+                throw new AccountException(ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED);
             }
             base.Deposit(-amount, person);
         }
