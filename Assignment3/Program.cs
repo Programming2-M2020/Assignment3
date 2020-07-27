@@ -49,14 +49,14 @@ namespace Assignment3
             Console.WriteLine(a);
 
             //a saving account
-            ITransaction b = Bank.GetAccount("SV-100002");
+            ITransaction b = Bank.GetAccount("SV-100002") as SavingAccount;
             b.Withdraw(300, p6);
             b.Withdraw(32.90, p6);
             b.Withdraw(50, p7);
             b.Withdraw(111.11, p8);
             Console.WriteLine(b);
 
-            b = (SavingAccount)Bank.GetAccount("SV-100003");
+            b = Bank.GetAccount("SV-100003") as SavingAccount;
             b.Deposit(300, p3);     //ok even though p3 is not a holder
             b.Deposit(32.90, p2);
             b.Deposit(50, p5);
@@ -64,7 +64,7 @@ namespace Assignment3
             Console.WriteLine(b);
 
             //a checking account
-            CheckingAccount c = (CheckingAccount)Bank.GetAccount("CK-100004");
+            ITransaction c = Bank.GetAccount("CK-100004") as CheckingAccount;
             c.Deposit(33.33, p7);
             c.Deposit(40.44, p7);
             c.Withdraw(150, p2);
@@ -73,7 +73,7 @@ namespace Assignment3
             c.Withdraw(350, p6);
             Console.WriteLine(c);
 
-            c =(CheckingAccount)Bank.GetAccount("CK-100005");
+            c =Bank.GetAccount("CK-100005") as CheckingAccount;
             c.Deposit(33.33, p8);
             c.Deposit(40.44, p7);
             c.Withdraw(450, p10);
@@ -89,7 +89,7 @@ namespace Assignment3
             a.DoPurchase(15, p1);
             Console.WriteLine(a);
 
-            b = Bank.GetAccount("SV-100007");
+            b = Bank.GetAccount("SV-100007") as SavingAccount;
             b.Deposit(300, p3);     //ok even though p3 is not a holder
             b.Deposit(32.90, p2);
             b.Deposit(50, p5);

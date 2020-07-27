@@ -43,7 +43,7 @@ namespace Assignment3
         public abstract void PrepareMonthlyReport();
         public override string ToString()
         {
-            return $"Account number: {Number} \nName: {string.Join(", ", users)} \nBalance: {Balance} \nTransactions: \n{string.Join("\n", transactions)}";
+            return $"Account number: {Number} \nName: {string.Join(", ", users)} \nBalance: " + (Balance >= 0? $"${Balance:f2}": $"-${-Balance:f2}") + $"\nTransactions: \n{string.Join("\n", transactions)}\n";
         }
     }
 }

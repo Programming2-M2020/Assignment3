@@ -43,5 +43,9 @@ namespace Assignment3
             Balance += interest - service_charge;
             transactions.Clear();
         }
+        public override string ToString()
+        {
+            return base.ToString() + "Overdraft: " + (hasOverDraft ? "Allowed\n" : "Not allowed\n");
+        }
     }
 }

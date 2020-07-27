@@ -7,17 +7,31 @@ namespace Assignment3
     class VisaAccount : Account, ITransaction
     {
         //field
-        private double CreditLimit;
-        private static double INTEREST_RATE = 0.1995;
+        double CreditLimit;
+        static double INTEREST_RATE = 0.1995;
         //constructor
-        public VisaAccount(double balance = 0, double creditLimit = 1200) : base("SV-", balance) { } // I dont understand the last part
+        public VisaAccount(double balance = 0, double creditLimit = 1200) : base("VS-", balance) //It is calling the constructor of the Account class @Nahia
+        {
+            CreditLimit = creditLimit;            
+        }
         // methods
         public void DoPayment(double amount, Person person)
         {
-            base.Deposit(amount, person);
+            Deposit(amount, person);
         }
-        public void DoPurchase(double amount, Person person) // I copied from saving accout class
+        public void Withdraw(double amount, Person person) { }
+        public void DoPurchase(double amount, Person person) 
         {
+            bool toVerify = false;
+            foreach (Person user in Bank.GetAccount(Number).users)
+            {
+                if (user.SIN == person.SIN || user.Name == person.Name)
+                {
+                    toVerify = true;
+                    break;
+                }
+            }
+            _ = toVerify ? toVerify : throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT.ToDescriptionString());
             if (!(person.IsAuthenticated))
             {
                 throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN.ToDescriptionString());
@@ -26,23 +40,13 @@ namespace Assignment3
             {
                 throw new AccountException(ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED.ToDescriptionString());
             }
-            base.Deposit(-amount, person);
-        }
-        public void PrepareMonthlyReport(double amount, Person person)
-        {
-            // nothing is mentioned in the assignement
+            Deposit(-amount, person);
         }
         public override void PrepareMonthlyReport()
         {
             double interest = (LowestBalance * INTEREST_RATE) / 12;
             Balance -= interest;
             transactions.Clear();
-
-        }
-        // this method is for IT transaction interface. I just try potential fixes.otherwise IT transaction showing error
-        public void Withdraw(double amount, Person person)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace Assignment3
@@ -20,8 +21,8 @@ namespace Assignment3
         }
         public override string ToString()
         {
-            return $"Account number {AccountNumber}/n Name of the person {Originator}/n The amount {Amount}" +
-                  $"The time of transaction {Time}"; 
+            return $"{Originator.Name} " + (Amount < 0d ? $"withdrew ${-Amount} from " : $"deposited ${Amount} to ") + $"Account number " +
+                $"{AccountNumber} on {Time.ToShortTimeString()}";
         }
 
 

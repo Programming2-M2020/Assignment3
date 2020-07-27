@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\nhakt\\.nuget\\packages\\": {}
+    "C:\\Users\\aniru\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\2ND SEMESTER\\COMM123 Programming II\\Assignment\\Assignment3\\Assignment3\\Assignment3.csproj",
+      "projectUniqueName": "D:\\source\\repos\\Assignment3\\Assignment3\\Assignment3.csproj",
       "projectName": "Assignment3",
-      "projectPath": "D:\\2ND SEMESTER\\COMM123 Programming II\\Assignment\\Assignment3\\Assignment3\\Assignment3.csproj",
-      "packagesPath": "C:\\Users\\nhakt\\.nuget\\packages\\",
-      "outputPath": "D:\\2ND SEMESTER\\COMM123 Programming II\\Assignment\\Assignment3\\Assignment3\\obj\\",
+      "projectPath": "D:\\source\\repos\\Assignment3\\Assignment3\\Assignment3.csproj",
+      "packagesPath": "C:\\Users\\aniru\\.nuget\\packages\\",
+      "outputPath": "D:\\source\\repos\\Assignment3\\Assignment3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nhakt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aniru\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
