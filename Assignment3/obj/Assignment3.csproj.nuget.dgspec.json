@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Health Info Technology\\Semester 2\\Programming 2\\Assignment03\\Assignment3\\Assignment3.csproj": {}
+    "D:\\2ND SEMESTER\\COMM123 Programming II\\Assignment\\Assignment3\\Assignment3\\Assignment3.csproj": {}
   },
   "projects": {
-    "D:\\Health Info Technology\\Semester 2\\Programming 2\\Assignment03\\Assignment3\\Assignment3.csproj": {
+    "D:\\2ND SEMESTER\\COMM123 Programming II\\Assignment\\Assignment3\\Assignment3\\Assignment3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Health Info Technology\\Semester 2\\Programming 2\\Assignment03\\Assignment3\\Assignment3.csproj",
+        "projectUniqueName": "D:\\2ND SEMESTER\\COMM123 Programming II\\Assignment\\Assignment3\\Assignment3\\Assignment3.csproj",
         "projectName": "Assignment3",
-        "projectPath": "D:\\Health Info Technology\\Semester 2\\Programming 2\\Assignment03\\Assignment3\\Assignment3.csproj",
-        "packagesPath": "C:\\Users\\draak\\.nuget\\packages\\",
-        "outputPath": "D:\\Health Info Technology\\Semester 2\\Programming 2\\Assignment03\\Assignment3\\obj\\",
+        "projectPath": "D:\\2ND SEMESTER\\COMM123 Programming II\\Assignment\\Assignment3\\Assignment3\\Assignment3.csproj",
+        "packagesPath": "C:\\Users\\nhakt\\.nuget\\packages\\",
+        "outputPath": "D:\\2ND SEMESTER\\COMM123 Programming II\\Assignment\\Assignment3\\Assignment3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\draak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nhakt\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
