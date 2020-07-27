@@ -22,7 +22,7 @@ namespace Assignment3
         public override string ToString()
         {
             return $"{Originator.Name} " + (Amount < 0d ? $"withdrew ${-Amount} from " : $"deposited ${Amount} to ") + $"Account number " +
-                $"{AccountNumber} on {Time.ToShortTimeString()}";
+                $"{AccountNumber} on {Time.ToShortDateString()} at {Time.ToShortTimeString()}";
         }
 
 
