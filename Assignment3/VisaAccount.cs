@@ -22,23 +22,17 @@ namespace Assignment3
         public void Withdraw(double amount, Person person) { }
         public void DoPurchase(double amount, Person person) 
         {
-            bool toVerify = false;
-            foreach (Person user in Bank.GetAccount(Number).users)
+            if (!IsUser(person.Name))
             {
-                if (user.SIN == person.SIN || user.Name == person.Name)
-                {
-                    toVerify = true;
-                    break;
-                }
+                throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT);
             }
-            _ = toVerify ? toVerify : throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT.ToDescriptionString());
             if (!(person.IsAuthenticated))
             {
-                throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN.ToDescriptionString());
+                throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN);
             }
             if (amount > Balance)
             {
-                throw new AccountException(ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED.ToDescriptionString());
+                throw new AccountException(ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED);
             }
             Deposit(-amount, person);
         }

@@ -119,12 +119,12 @@ namespace Assignment3
 
             try
             {
-                a.DoPurchase(5825, p4); //credit limit exceeded
+                a.DoPurchase(5825, p1); //credit limit exceeded
             }
             catch (AccountException e) { Console.WriteLine(e.Message); }
             try
             {
-                c.Withdraw(1500, p6); //no overdraft
+                c.Withdraw(1500, p8); //no overdraft
             }
             catch (AccountException e) { Console.WriteLine(e.Message); }
 

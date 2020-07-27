@@ -22,7 +22,7 @@ namespace Assignment3
         [Description("Incorrect password")]
         PASSWORD_INCORRECT,
 
-        [Description("This Account number doesn't exist")]
+        [Description("This user doesn't exist")]
         USER_DOES_NOT_EXIST,
 
         [Description("User not logged in")]
@@ -30,7 +30,7 @@ namespace Assignment3
     }
     public class AccountException : Exception
     {
-        public AccountException(string reason) : base(reason)
+        public AccountException(ExceptionEnum reason) : base(reason.ToDescriptionString())
         {
         }
     }

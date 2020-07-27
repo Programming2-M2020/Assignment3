@@ -21,15 +21,15 @@ namespace Assignment3
         {
             if (!IsUser(person.Name))
             {
-                throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT.ToDescriptionString());
+                throw new AccountException(ExceptionEnum.NAME_NOT_ASSOCIATED_WITH_ACCOUNT);
             }
             if (!(person.IsAuthenticated))
             {
-                throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN.ToDescriptionString());
+                throw new AccountException(ExceptionEnum.USER_NOT_LOGGED_IN);
             }
             if (amount > Balance)
             {
-                throw new AccountException(ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED.ToDescriptionString());
+                throw new AccountException(ExceptionEnum.CREDIT_LIMIT_HAS_BEEN_EXCEEDED);
             }
             base.Deposit(-amount, person);
         }

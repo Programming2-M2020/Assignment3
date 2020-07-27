@@ -82,7 +82,7 @@ namespace Assignment3
                     break;
                 }
             }
-            return toBeReturned == null ? throw new AccountException(ExceptionEnum.ACCOUNT_DOES_NOT_EXIST.ToDescriptionString()) : toBeReturned;
+            return toBeReturned == null ? throw new AccountException(ExceptionEnum.ACCOUNT_DOES_NOT_EXIST) : toBeReturned;
         }
         public static Person GetPerson(string name)
         {
@@ -95,7 +95,7 @@ namespace Assignment3
                     break;
                 }
             }
-            return toBeReturned == null ? throw new AccountException(ExceptionEnum.USER_DOES_NOT_EXIST.ToDescriptionString()) : toBeReturned;
+            return toBeReturned == null ? throw new AccountException(ExceptionEnum.USER_DOES_NOT_EXIST) : toBeReturned;
         }
         public static void PrintAccounts()
         {
