@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 
 namespace Assignment3
 {
+    //The description attributes given are the messages that will be displayed, using the extension 
+    //method given after the AccountException class
     public enum ExceptionEnum
     {
         [Description("This Account number doesn't exist")]
@@ -30,6 +30,7 @@ namespace Assignment3
     }
     public class AccountException : Exception
     {
+        //CONSTRUCTOR
         public AccountException(ExceptionEnum reason) : base(reason.ToDescriptionString())
         {
         }

@@ -31,7 +31,6 @@ namespace Assignment3
             p6.Login("789"); p7.Login("890");
             p10.Login("234"); p8.Login("901");
 
-            //a visa account
             VisaAccount a = Bank.GetAccount("VS-100000") as VisaAccount;
             a.DoPayment(1500, p0);
             a.DoPurchase(200, p1);
@@ -41,6 +40,7 @@ namespace Assignment3
             a.DoPayment(400, p0);
             Console.WriteLine(a);
 
+            //a visa account
             a = Bank.GetAccount("VS-100001") as VisaAccount;
             a.DoPayment(500, p0);
             a.DoPurchase(25, p3);
@@ -97,7 +97,7 @@ namespace Assignment3
             Console.WriteLine(b);
 
             Console.WriteLine("\n\nExceptions:");
-            //The following will cause exception
+            //The following will cause exceptions, formatted to print the error message to console and move on
             try
             {
                 p8.Login("911");//incorrect password
@@ -146,7 +146,7 @@ namespace Assignment3
                 Console.WriteLine(account);
 
                 Console.WriteLine("\nAfter PrepareMonthlyReport()");
-                account.PrepareMonthlyReport();   //all transactions are cleared, balance changes
+                account.PrepareMonthlyReport();   //all transactions are cleared, balance changes due to interest and service charges
                 Console.WriteLine(account);
             }
 

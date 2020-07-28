@@ -3,13 +3,16 @@ namespace Assignment3
 {
     class CheckingAccount : Account, ITransaction
     {
+        //FIELDS
         static double COST_PER_TRANSACTION = 0.05;
         static double INTEREST_RATE = 0.005;
         bool hasOverDraft;
+        //CONSTRUCTOR
         public CheckingAccount(double balance = 0, bool hasOverDraft = false) : base("CK-", balance)
         {
             this.hasOverDraft = hasOverDraft;
         }
+        //METHODS
         public new void Deposit(double amount, Person person)
         {
             base.Deposit(amount, person);

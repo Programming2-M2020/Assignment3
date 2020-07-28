@@ -1,24 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace Assignment3
 {
     class VisaAccount : Account, ITransaction
     {
-        //field
+        //FIELDS
         double CreditLimit;
         static double INTEREST_RATE = 0.1995;
-        //constructor
+        //CONSTRUCTOR
         public VisaAccount(double balance = 0, double creditLimit = 1200) : base("VS-", balance) //It is calling the constructor of the Account class @Nahia
         {
             CreditLimit = creditLimit;            
         }
-        // methods
+        //METHODS
         public void DoPayment(double amount, Person person)
         {
             Deposit(amount, person);
         }
+        //to satisfy ITransaction implementation requirements
         public void Withdraw(double amount, Person person) { }
         public void DoPurchase(double amount, Person person) 
         {
@@ -42,6 +40,7 @@ namespace Assignment3
             Balance -= interest;
             transactions.Clear();
         }
+        //extra overwriting to print the credit limit
         public override string ToString()
         {
             return base.ToString() + $"Credit Limit: ${CreditLimit}\n";
